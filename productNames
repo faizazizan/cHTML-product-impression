@@ -1,0 +1,13 @@
+function() {
+  var productNames = [];
+  var elements = document.querySelectorAll(".rightcol_prodname");
+
+  elements.forEach(function(element) {
+    var productName = element.getAttribute("title");
+    if (productName) {
+      productNames.push(productName);
+    }
+  });
+
+  return productNames;
+}
