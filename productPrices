@@ -1,0 +1,12 @@
+function() {
+  var productPrices = [];
+  var elements = document.querySelectorAll(".productSpecialPrice");
+
+  elements.forEach(function(element) {
+    var priceText = element.innerText.trim();
+    var discountedPrice = priceText.split(" ")[0];
+    productPrices.push(discountedPrice);
+  });
+
+  return productPrices;
+}
