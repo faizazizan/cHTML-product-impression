@@ -1,0 +1,24 @@
+<script>
+  var productNames = {{Product Names}};
+  var productPrices = {{Product Prices}};
+
+  var impressions = [];
+
+  for (var i = 0; i < productNames.length; i++) {
+    impressions.push({
+      'item_id': 'ID_' + i,
+      'item_name': productNames[i],
+      'item_category': 'Lips', // Set the category as needed
+      'price': productPrices[i]
+    });
+  }
+
+  // Push the impression data to the data layer
+  dataLayer.push({
+    'event': 'productImpression', // Custom event name
+    'ecommerce': {
+      'currency': 'MYR', // Set the currency code as needed
+      'impressions': impressions
+    }
+  });
+</script>
